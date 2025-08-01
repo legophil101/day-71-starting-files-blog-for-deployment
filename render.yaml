@@ -3,7 +3,5 @@ services:
     name: Philip's Blog
     env: python
     plan: free
-    buildCommand: |
-      echo "python-3.11.9" > runtime.txt
-      pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn main:app
