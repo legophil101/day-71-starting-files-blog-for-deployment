@@ -3,5 +3,4 @@ services:
     name: Philip's Blog
     env: python
     plan: free
-    buildCommand: ""
     startCommand: gunicorn main:app
