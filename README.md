@@ -53,6 +53,7 @@ Deployed on [Render](https://render.com) with:
 🖼️ Screenshots
 
 📚 Lessons Learned
+
 Resolving dependency conflicts (Flask, Jinja2, MarkupSafe)
 
 Configuring PostgreSQL on Render
@@ -64,6 +65,7 @@ Deploying Flask apps with Gunicorn
 Keeping Render free-tier sites alive with UptimeRobot/cron-job.org
 
 🧠 My Journey
+
 This project started as part of my programming course, and it turned into my first fully deployed web app.
 Some challenges I overcame:
 
@@ -77,8 +79,7 @@ It might have taken months and lots of late nights, but hitting “live” for t
 
 Better Call Phil for your next Flask site. 😉
 
-📄 License
-This project is licensed under the MIT License.
+
 
 
 
