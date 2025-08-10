@@ -77,7 +77,7 @@ Some challenges I overcame:
 - Debugging Render build logs with persistence and problem-solving 
 - It might have taken months and lots of late nights, but hitting “live” for the first time was worth it.
 
-Better Call Phil for your next Flask site. 😉
+Better Call Phil for your next Flask site. 😁
 
 
 

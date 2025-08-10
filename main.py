@@ -317,7 +317,7 @@ def send_email(name, email, phone, message):
             connection.login(MAIL_ADDRESS, MAIL_APP_PW)
             connection.sendmail(MAIL_ADDRESS, MAIL_ADDRESS, email_message)
     except Exception as e:
-        # Log the error and continue so the site doesn't hang
+        # Log the error and continue so the site doesn't hang.
         app.logger.error(f"Email send failed: {e}")
 
 
