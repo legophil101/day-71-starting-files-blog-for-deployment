@@ -36,21 +36,28 @@ Deployed on [Render](https://render.com) with:
    git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
    cd YOUR-REPO
 2. Create a virtual environment
+   
    python -m venv venv
    source venv/bin/activate   # macOS/Linux
    venv\Scripts\activate      # Windows
-3. Install dependencies
+4. Install dependencies
+   
    pip install -r requirements.txt
-4. Set environment variables
+6. Set environment variables
+   
    Create a .env file in the root directory:
    SECRET_KEY=your_secret_key
    DATABASE_URL=your_postgres_url
-5. Run the app
+8. Run the app
+   
    flask run
-6. Open in browser
+10. Open in browser
+    
    http://127.0.0.1:5000
    
-🖼️ Screenshots
+🌐 Live Demo
+You can check out the deployed site here:
+🔗 [Philip's Blog on Render](https://philips-blog-9kuj.onrender.com/)
 
 📚 Lessons Learned
 
