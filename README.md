@@ -29,6 +29,9 @@ Deployed on [Render](https://render.com) with:
 - PostgreSQL database (free tier)
 - Gunicorn server
 - `.env` for sensitive credentials
+## 🌐 Live Demo
+You can check out the deployed site here:
+🔗 [Philip's Blog on Render](https://philips-blog-9kuj.onrender.com/)
 
 ## 📦 Installation
 
