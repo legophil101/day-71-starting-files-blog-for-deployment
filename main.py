@@ -54,9 +54,12 @@ gravatar = Gravatar(app,
                     use_ssl=False,
                     base_url=None)
 
+
 # CREATE DATABASE
 class Base(DeclarativeBase):
     pass
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
@@ -283,22 +286,39 @@ def about():
 MAIL_ADDRESS = os.environ.get("EMAIL_KEY")
 MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
 
+
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
         data = request.form
-        send_email(data["name"], data["email"], data["phone"], data["message"])
-        return render_template("contact.html", msg_sent=True, current_user=current_user)
+        try:
+            send_email(data["name"], data["email"], data["phone"], data["message"])
+            msg_sent = True
+        except Exception as e:
+            app.logger.error(f"Contact form error: {e}")
+            msg_sent = False
+        return render_template("contact.html", msg_sent=msg_sent, current_user=current_user)
     return render_template("contact.html", msg_sent=False, current_user=current_user)
+
 
 # Email sending function
 def send_email(name, email, phone, message):
-    email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(MAIL_ADDRESS, MAIL_APP_PW)
-        connection.sendmail(MAIL_ADDRESS, MAIL_ADDRESS, email_message)
-
+    email_message = (
+        f"Subject: New Message\n\n"
+        f"Name: {name}\n"
+        f"Email: {email}\n"
+        f"Phone: {phone}\n"
+        f"Message: {message}"
+    )
+    try:
+        # Gmail SMTP over TLS
+        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+            connection.starttls()
+            connection.login(MAIL_ADDRESS, MAIL_APP_PW)
+            connection.sendmail(MAIL_ADDRESS, MAIL_ADDRESS, email_message)
+    except Exception as e:
+        # Log the error and continue so the site doesn't hang
+        app.logger.error(f"Email send failed: {e}")
 
 
 if __name__ == "__main__":

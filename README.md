@@ -12,6 +12,7 @@ A personal blog website built **from scratch** using **Flask**, **Python**, **Bo
 - 👤 **Gravatar integration** for profile images
 - 📱 **Mobile-friendly** Bootstrap layout
 - 🔒 **Admin-only features** for managing posts
+- 📧 **Contact Form & Email Sending** allows visitors to send you a message
 
 ## 🛠️ Technologies Used
 - Python 3
@@ -36,46 +37,45 @@ Deployed on [Render](https://render.com) with:
    git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
    cd YOUR-REPO
 2. Create a virtual environment
+
    python -m venv venv
+
    source venv/bin/activate   # macOS/Linux
+
    venv\Scripts\activate      # Windows
 3. Install dependencies
+
    pip install -r requirements.txt
 4. Set environment variables
+
    Create a .env file in the root directory:
+
    SECRET_KEY=your_secret_key
+
    DATABASE_URL=your_postgres_url
 5. Run the app
+
    flask run
 6. Open in browser
+
    http://127.0.0.1:5000
-   
-🖼️ Screenshots
 
-📚 Lessons Learned
-
-Resolving dependency conflicts (Flask, Jinja2, MarkupSafe)
-
-Configuring PostgreSQL on Render
-
-Using .env for security
-
-Deploying Flask apps with Gunicorn
-
-Keeping Render free-tier sites alive with UptimeRobot/cron-job.org
+📚 Lessons Learned 
+- Resolving dependency conflicts (Flask, Jinja2, MarkupSafe)
+- Configuring PostgreSQL on Render 
+- Using .env for security 
+- Deploying Flask apps with Gunicorn 
+- Keeping Render free-tier sites alive with UptimeRobot/cron-job.org
 
 🧠 My Journey
 
 This project started as part of my programming course, and it turned into my first fully deployed web app.
+
 Some challenges I overcame:
-
-Figuring out why my Python version wasn’t compatible on Render (fixed by setting an older version in .env)
-
-Handling PostgreSQL database setup and migration
-
-Debugging Render build logs with persistence and problem-solving
-
-It might have taken months and lots of late nights, but hitting “live” for the first time was worth it.
+- Figuring out why my Python version wasn’t compatible on Render (fixed by setting an older version in .env)
+- Handling PostgreSQL database setup and migration 
+- Debugging Render build logs with persistence and problem-solving 
+- It might have taken months and lots of late nights, but hitting “live” for the first time was worth it.
 
 Better Call Phil for your next Flask site. 😉
 
