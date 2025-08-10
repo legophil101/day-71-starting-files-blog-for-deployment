@@ -53,9 +53,10 @@ Deployed on [Render](https://render.com) with:
    flask run
 10. Open in browser
     
-   http://127.0.0.1:5000
+      http://127.0.0.1:5000
    
 🌐 Live Demo
+
 You can check out the deployed site here:
 🔗 [Philip's Blog on Render](https://philips-blog-9kuj.onrender.com/)
 
