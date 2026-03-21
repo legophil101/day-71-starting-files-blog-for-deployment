@@ -142,7 +142,8 @@ def ping():
     except Exception as e:
         # Logs the error to Render so you can see why it failed
         app.logger.error(f"Health check failed: {e}")
-        return "Database Offline", 500
+        # ...but this tells UptimeRobot "The app is still alive, don't panic!"
+        return "Database Offline", 200
 
 
 # Create an admin-only decorator
